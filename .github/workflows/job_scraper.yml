@@ -25,6 +25,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
+      - name: Install XVFB
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
@@ -43,4 +48,4 @@ jobs:
           INSTA_PASSWORD: ${{ secrets.INSTA_PASSWORD }}
           INSTA_FOR_JOBS: ${{ secrets.INSTA_FOR_JOBS }}
         run: |
-          python main.py
+          xvfb-run python main.py
