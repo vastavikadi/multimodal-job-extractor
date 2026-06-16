@@ -8,6 +8,8 @@ Job Reels Pipeline automates the collection and processing of job postings share
 
 The system continuously discovers new reels from job-focused Instagram accounts, extracts information from captions, on-screen text, and spoken audio, and converts the content into structured job metadata suitable for search, analytics, and downstream applications.
 
+- NOTE: Don't forget to make directories `videos`, `frames`, and `jsons` in the root directory before running the pipeline. These directories are used for storing downloaded reels, extracted frames, and intermediate JSON files respectively. Your session cookies for Instagram should be stored in `sessions/instagram_cookies.txt` to enable authenticated access to the reels.
+
 - NOTE: This project is currently taking only one Instagram account for job reels. If you want it to take multiple accounts, you can modify the code in `reel_operations/visit_account.py` to loop through a list of accounts. Simply, add a list of accounts in the `.env` file and loop through them in the code. Make sure to handle rate limits and session management appropriately. If you are new to Python, you can reach out to me on LinkedIn (https://www.linkedin.com/in/vastavikadi/) for guidance or you can also use LLMs like Claude or ChatGPT to help you with the code modifications.
 
 ## Features
