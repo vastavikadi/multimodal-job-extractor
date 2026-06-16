@@ -36,10 +36,11 @@ jobs:
 
       - name: Run scraper
         env:
-          ASTRA_DB_TOKEN: ${{ secrets.ASTRA_DB_TOKEN }}
           ASTRA_DB_API_ENDPOINT: ${{ secrets.ASTRA_DB_API_ENDPOINT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          IG_USERNAME: ${{ secrets.IG_USERNAME }}
-          IG_PASSWORD: ${{ secrets.IG_PASSWORD }}
+          ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INSTA_USERNAME: ${{ secrets.INSTA_USERNAME }}
+          INSTA_PASSWORD: ${{ secrets.INSTA_PASSWORD }}
+          INSTA_FOR_JOBS: ${{ secrets.INSTA_FOR_JOBS }}
         run: |
           python main.py
