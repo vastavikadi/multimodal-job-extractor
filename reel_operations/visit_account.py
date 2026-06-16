@@ -1,6 +1,7 @@
 import os
 import time
 import random
+from urllib import response
 from playwright.sync_api import sync_playwright
 import json
 from dotenv import load_dotenv
@@ -19,11 +20,16 @@ def visit_account():
         else:
             context = browser.new_context()
             page = context.new_page()
-            response =page.goto("https://www.instagram.com/accounts/login/", wait_until="domcontentloaded")
-            print("Status:", response.status if response else "No response")
-            print("Current URL:", page.url)
-            page.screenshot(path="instagram_debug.png")
-            print(page.content()[:1000])
+            try:
+                response =page.goto("https://www.instagram.com/accounts/login/", wait_until="domcontentloaded")
+                print("Status:", response.status if response else "No response")
+                print("Current URL:", page.url)
+            except Exception as e:
+                print("Goto failed:", e)
+            finally:
+                page.screenshot(path="instagram_debug.png")
+                with open("instagram_debug.html", "w", encoding="utf-8") as f:
+                    f.write(page.content())
             page.locator('input[name="email"]').fill(os.getenv("INSTA_USERNAME"))
             page.locator('input[name="pass"]').fill(os.getenv("INSTA_PASSWORD"))
             page.locator('[aria-label="Log In"]').click()
