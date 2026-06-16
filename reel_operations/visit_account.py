@@ -4,7 +4,7 @@ import random
 from playwright.sync_api import sync_playwright
 import json
 from dotenv import load_dotenv
-from sessions import convert_cookies
+from sessions.convert_cookies import convert_cookies
 
 load_dotenv()
 
