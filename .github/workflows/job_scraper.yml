@@ -39,13 +39,6 @@ jobs:
         run: |
           playwright install chromium
 
-      - name: Upload screenshot
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: instagram-debug
-          path: instagram_debug.png
-
       - name: Run scraper
         env:
           ASTRA_DB_API_ENDPOINT: ${{ secrets.ASTRA_DB_API_ENDPOINT }}
@@ -56,3 +49,11 @@ jobs:
           INSTA_FOR_JOBS: ${{ secrets.INSTA_FOR_JOBS }}
         run: |
           xvfb-run python main.py
+
+      - name: Upload screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-debug
+          path: instagram_debug.png
+          if-no-files-found: ignore
