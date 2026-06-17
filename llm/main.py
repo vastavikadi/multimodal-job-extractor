@@ -76,42 +76,42 @@ Return JSON only.
 """
 
 DEFAULT_RESPONSE = {
-  "is_job_posting": false,
+    "is_job_posting": False,
 
-  "company": null,
-  "role": null,
+    "company": None,
+    "role": None,
 
-  "location": null,
-  "work_mode": null,
+    "location": None,
+    "work_mode": None,
 
-  "salary": null,
-  "salary_min": null,
-  "salary_max": null,
-  "salary_currency": null,
+    "salary": None,
+    "salary_min": None,
+    "salary_max": None,
+    "salary_currency": None,
 
-  "experience": null,
-  "experience_min_years": null,
-  "experience_max_years": null,
+    "experience": None,
+    "experience_min_years": None,
+    "experience_max_years": None,
 
-  "employment_type": null,
+    "employment_type": None,
 
-  "skills": [],
+    "skills": [],
 
-  "education": null,
+    "education": None,
 
-  "apply_link": null,
-  "contact_email": null,
-  "contact_phone": null,
+    "apply_link": None,
+    "contact_email": None,
+    "contact_phone": None,
 
-  "application_deadline": null,
+    "application_deadline": None,
 
-  "source_platform": "instagram",
+    "source_platform": "instagram",
 
-  "job_description": null,
+    "job_description": None,
 
-  "benefits": [],
+    "benefits": [],
 
-  "confidence": 0.0
+    "confidence": 0.0
 }
 
 def extract_job_info(
