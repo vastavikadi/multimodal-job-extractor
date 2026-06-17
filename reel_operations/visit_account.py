@@ -55,6 +55,8 @@ def visit_account():
             "els => [...new Set(els.map(e => e.href))]"
         )
 
+        os.makedirs("jsons", exist_ok=True)
+        
         with open("jsons/reels_links.json", "w") as f:
             json.dump(links, f, indent=4)
 
