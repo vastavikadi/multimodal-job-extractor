@@ -107,6 +107,7 @@ def extract_text_from_frames(table):
                 {
                     "$set": {
                         "ocr_text": ocr_text,
+                        "ocr_processed": True
                     }
                 }
             )
