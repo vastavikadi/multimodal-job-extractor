@@ -34,6 +34,7 @@ def extract_frames(video_path, output_dir):
 reels_dir = "videos"
 
 def execute_frame_extraction():
+    os.makedirs(reels_dir, exist_ok=True)
     for filename in os.listdir(reels_dir):
         if filename.endswith(".mp4"):
             video_path = os.path.join(reels_dir, filename)
