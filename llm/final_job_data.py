@@ -1,4 +1,4 @@
-import os
+import json
 from .main import extract_job_info
 
 def final_job_data(table):
