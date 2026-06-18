@@ -1,3 +1,4 @@
+import os
 from .main import extract_job_info
 
 def final_job_data(table):
@@ -20,7 +21,7 @@ def final_job_data(table):
                 {"id": reel["id"]},
                 {
                     "$set": {
-                        "final_job_data": job_json,
+                        "final_job_data": json.dump(job_json),
                         "processed": True
                     }
                 }
