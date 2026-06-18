@@ -11,7 +11,7 @@ load_dotenv()
 
 def visit_account():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True) #headless for github actions, if running locally then try headless=False
+        browser = p.chromium.launch(headless=False) #headless for github actions, if running locally then try headless=False
         if "instagram_state.json" in os.listdir("sessions/"):
             with open("sessions/instagram_state.json", "r") as f:
                 instagram_state = json.load(f)
